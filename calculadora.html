@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+}
+
+.complementClear{
+    font-size: 30px;
+}
+
+.complementDivision{
+    font-size: 30px;
+}
+
+.complementSubtration{
+    font-size: 30px;
+}
+
+.complementCircunflexo{
+    font-size: 30px;
+}
+
+.complementRaiz{
+    font-size: 20px;
+}
+
+.complementIgual{
+    font-size: 30px;
+}
+
+
+
+.structure{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+ .resultado{
+    position: relative;
+    background-color: white;
+    margin-bottom: 15px;
+    padding: 25px;
+    width: 380px;
+    left: 4%;
+    border: none;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main button{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    width: 100px;
+    border: none;
+    border-radius: 15px;
+   
+}
+
+main button:hover{
+    transform: scale(1.1);
+    transition: .3s;
+}
+
+.btn{
+    background-color: rgb(75, 72, 72);
+    font-size: 25px;
+}
+
+.btn:hover{
+    background-color: rgb(75, 72, 72);
+   
+}
+
+.btn:active{
+    background-color: rgb(131, 133, 136);
+}
+
+.btnY{
+    background-color: yellow;
+}
+
+.btnY:active, .btnB:active, .btnR:active{
+background-color: white;
+transition: .5s;
+}
+
+.btnB{
+    background-color: blue;
+}
+
+.btnR{
+    background-color: red;
+}
+
+body{
+background-color: rgb(34, 34, 34);
+}
+    </style>
+    <title>Calculadora</title>
+</head>
+<body>
+    
+<header>
+
+
+
+</header>
+    
+
+<main>
+    <div class="structure">
+        <p id="resultado" class="resultado"></p>
+
+        <table>
+            <!-- Lista 1 -->
+            <tr>
+                <td><button onclick="clean()" class="btnB"><p class="complementClear">C</p></button></td>
+                <td><button onclick="back()" class="btnR"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace-fill" viewBox="0 0 16 16">
+                    <path d="M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8z"/>
+                  </svg></button></td>
+                <td><button onclick="insert('/')" class="btnY"><p class="complementDivision">÷</p></button></td>
+                <td><button onclick="insert('*')" class="btnY"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                  </svg></button></td>
+            </tr>
+
+        <!-- Lista 2 -->
+        <tr>
+            <td><button onclick="insert('9')" class="btn">9</button></td>
+            <td><button onclick="insert('8')" class="btn">8</button></td>
+            <td><button onclick="insert('7')" class="btn">7</button></td>
+            <td><button onclick="insert('+')" class="btnY"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+              </svg></button></td>
+        </tr>
+
+        <!-- Lista 3 -->
+        <tr>
+            <td><button onclick="insert('6')" class="btn">6</button></td>
+            <td><button onclick="insert('5')" class="btn">5</button></td>
+            <td><button onclick="insert('4')" class="btn">4</button></td>
+            <td><button onclick="insert('-')" class="btnY"><p class="complementSubtration">-</p></button></td>
+        </tr>
+
+        <!-- Lista 4 -->
+        <tr>
+            <td><button onclick="insert('3')" class="btn">3</button></td>
+            <td><button onclick="insert('2')"  class="btn">2</button></td>
+            <td><button onclick="insert('1')" class="btn">1</button></td>
+            <td><button onclick="insert('**')" class="btnY"><p class="complementCircunflexo">^</p></button></td>
+        </tr>
+
+        <!-- Lista 5 -->
+        <tr>
+            <td><button onclick="insert('0')" class="btn">0</button></td>
+            <td><button onclick="sqrt()" class="btnY"><p class="complementRaiz">V²</p></button></td>
+            <td><button onclick="porcentagem()" class="btnY"><p class="complementRaiz">%</p></button></td>
+            <td><button onclick="calc()" class="btnY"><p class="complementIgual">=</p></button></td>
+        </tr>
+        </table>
+    </div>
+</main>
+
+
+<script>
+    var resultado = document.getElementById('resultado')
+
+function insert(insert){
+document.getElementById('resultado').innerHTML = resultado.innerHTML + insert
+}
+
+function clean(){
+    resultado.innerHTML = ""
+}
+
+function back(){
+    let resultado = document.getElementById('resultado').innerHTML
+    document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1)
+}
+
+function sqrt(){
+    let resultado = document.getElementById('resultado').innerHTML
+    document.getElementById('resultado').innerHTML = Math.sqrt(resultado)
+}
+
+function porcentagem(){
+    let resultado = document.getElementById('resultado').innerHTML
+    document.getElementById('resultado').innerHTML = resultado / 100
+}
+
+function calc(){
+    let resultado = document.getElementById('resultado').innerHTML
+    document.getElementById('resultado').innerHTML = eval(resultado)
+}
+
+
+</script>
+</body>
+</html>
